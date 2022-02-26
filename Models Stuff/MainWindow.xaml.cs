@@ -88,11 +88,12 @@ namespace Models_Stuff {
             return ans;
         }
 
-        private double MathsStuff2(float y, double max) {
-            double ans = max - ((max - StartVal) * Math.Pow(a, y));
-            return ans;
-        }
-
-
+        /// <summary>
+        /// The used function
+        /// </summary>
+        /// <param name="y"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        private double MathsStuff2(float y, double max) => max - ((max - StartVal) * Math.Pow(a, y));
     }
 }
