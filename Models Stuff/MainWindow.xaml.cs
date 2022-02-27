@@ -7,9 +7,6 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace Models_Stuff {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window {
         public SeriesCollection SeriesCollection { get; set; }
         public string[] Labels { get; set; }
@@ -24,6 +21,8 @@ namespace Models_Stuff {
 
         public MainWindow() {
             InitializeComponent();
+
+            // Livecharts setups
             SeriesCollection = new SeriesCollection {
                 new LineSeries
                 {
