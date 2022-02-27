@@ -36,8 +36,10 @@ namespace Models_Stuff {
             SeriesCollection = new SeriesCollection {
                 new LineSeries
                 {
-                    Title = "Series 1",
-                    Values = new ChartValues<double> { }
+                    Title = "% of remote workers",
+                    Values = new ChartValues<double> { },
+                    Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255))
+                    
                 },
             };
             YFormatter = value => value.ToString();
@@ -45,16 +47,15 @@ namespace Models_Stuff {
         }
 
         private void TextChanged(object sender, TextChangedEventArgs e) {
-            //UpdateShit();
         }
 
 
         private void UpdateGraph() {
             #region Setup
-            if (SYBox == null || EYBox == null || ICBox == null || TABox == null || PLBox == null || SeriesCollection == null) return;
+            if (SYBox == null || EYBox == null || TABox == null || PLBox == null || SeriesCollection == null) return;
 
             if (!int.TryParse(SYBox.Text.ToString(), out int StartYear) || !int.TryParse(EYBox.Text.ToString(), out int EndYear) ||
-                !float.TryParse(ICBox.Text.ToString(), out Internet) || !float.TryParse(TABox.Text.ToString(), out StartVal) ||
+                !float.TryParse(TABox.Text.ToString(), out StartVal) ||
                 !float.TryParse(PLBox.Text.ToString(), out Labour) || !float.TryParse(ABox.Text, out a) || !float.TryParse(OffsetBox.Text, out Offset) ||
                 EndYear < StartYear) return;
 
